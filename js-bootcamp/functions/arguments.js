@@ -8,9 +8,9 @@ let result = add(10, 1, 5)
 console.log(result)
 
 //default arguments
-
+//template Strings (Mac keyboard -->  Alt + < )
 let getScoreText = function (name = 'Anonymous', score = 0) {
-    return 'Name: ' + name + ' Score: ' + score
+    return `Name: ${name}, Score: ${score}!`
 }
 
 console.log(getScoreText())// Name: Anonymous Score: 0
@@ -20,15 +20,13 @@ console.log(getScoreText(undefined, 99)) // Name: Anonymous Score: 99
 //challenge
 // total, tipPercent, deafult .2 for tip 
 // return the valu of tip
-
+// A 25 tip on $40 would be $10.......
 let getTipPercent = function (total, tipPercent = .2) {
-    return total * tipPercent
+    let percent = tipPercent * 100
+    let tip = total * tipPercent
+    return `A ${percent}% tip on $${total} would be $${tip}.`
 }
 
 console.log(getTipPercent(123))
 console.log(getTipPercent(123, undefined))
-console.log(getTipPercent(145, .5))
-
-//template Strings (Mac keyboard --> Alt + <)
-let name = 'Jen'
-console.log(`Hey my name is ${name}`)
+console.log(getTipPercent(40, .25))
